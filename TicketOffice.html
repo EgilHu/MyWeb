@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketOffice</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        .background {
+            background-image: url('background draft.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 所有视觉元素 */
+        .content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(1); /* 禁止缩放 */
+            /* user-select: none; 禁止用户选择 */
+        }
+
+        /* NEWS栏png样式 */
+        .news {
+            position: absolute;
+            top: 34.5%;
+            left: 28.3%;
+            width: 121px;
+            height: 280px;
+            background-image: url('news.png'); /* 使用PNG静图 */
+            background-size: cover;
+            /* background-position: center; */
+        }
+
+        /* AllTrips栏样式 */
+        .all-trips {
+            position: absolute;
+            top: 33%;
+            left: 60.8%;
+            width: 200px;
+            height: 300px;
+            background-image: url('allTrips.png'); /* 使用PNG静图 */
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+        }
+
+        /* 自我介绍gif样式 */
+        .self-intro-gif {
+            position: absolute;
+            top: 42%;
+            left: 40%;
+            width: 170px;
+            height: 170px;
+            background-image: url('self-intro.gif'); /* 使用GIF动图 */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        /* 邮箱gif样式 */
+        .mailbox-gif {
+            position: absolute;
+            top: 31%;
+            left: 50%;
+            width: 170px;
+            height: 170px;
+            background-image: url('mailbox.gif'); /* 使用GIF动图 */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        /* 弹出的'self-intro.png'样式 */
+        .popup-image {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none; /* 初始隐藏 */
+            z-index: 1000;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        /* 覆盖背景遮罩 */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000(0.15);
+            z-index: 999;
+            display: none; 
+        }
+    </style>
+</head>
+<body id="ticket-office">
+      <!-- 顶部导航栏 -->
+    <header class="navbar">
+        <nav>
+        <a href="TicketOffice.html" class="nav-link active" target="_blank">Ticket Office</a>
+        <a href="AllTrips.html" class="nav-link" target="_blank">All Trips</a>
+        <a href="mailto:qingccch@gmail.com"class="nav-link" target="_blank">Contact</a>
+        </nav>
+    </header>
+    
+    <div class="content">
+
+        <div class="background"></div>
+
+        <!--可点击交互元素 -->
+        <div class="self-intro-gif" id="selfIntro"></div>
+        <div class="mailbox-gif" id="mailbox"></div>
+        <div class="news"></div>
+        <div class="all-trips" id="AllTrips"></div>
+
+        <!-- 交互后视觉元素 -->
+        <div class="overlay" id="overlay" style="background-color: rgba(46, 46, 46, 0.65);"></div>    
+        <img src="self-intro.png" alt="Popup Image" class="popup-image" id="popupImage">
+        <div class="skull-gif" id="skullGif"></div>
+    </div>
+    
+    <script>
+        // 获取元素
+        const selfIntro = document.getElementById('selfIntro');
+        const mailbox = document.getElementById('mailbox');
+        const popupImage = document.getElementById('popupImage');
+        const overlay = document.getElementById('overlay');
+        const AllTrips = document.getElementById('AllTrips');
+        const skullGif = document.getElementById('skullGif');
+
+        // 点击'AllTrips'后跳转到'AllTrips.html'
+        AllTrips.addEventListener('click', () => {
+            window.location.href = 'AllTrips.html';
+        });
+        
+        // 点击'self-intro.gif'后弹出图片、遮罩、skull.gif
+        selfIntro.addEventListener('click', () => {
+            popupImage.style.display = 'block';
+            overlay.style.display = 'block';
+            skullGif.style.display = 'block';
+        });
+
+        // 点击'mailbox.gif'后跳转到'Contact.html'
+        mailbox.addEventListener('click', () => {
+            window.location.href = 'mailto:qingccch@gmail.com';
+        });
+
+        // 点击遮罩关闭弹出图片和遮罩
+        overlay.addEventListener('click', () => {
+            popupImage.style.display = 'none';
+            overlay.style.display = 'none';
+            skullGif.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* 顶部导航栏 */
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(231, 248, 255, 0.25);
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 20px 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  font-family: 'Bookman Old Style';
+}
+
+.navbar .nav-link {
+  color: #000;
+  text-decoration: none;
+  margin-left: 50px;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.navbar .nav-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* 主体布局 */
+.container {
+  display: flex;
+  margin-top: 60px;
+  /* 留出顶部导航栏的空间 */
+}
+
+/* 仅为TicketOffice页面设置背景 */
+#ticket-office {
+  background-image: url('background draft.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

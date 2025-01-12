@@ -1,0 +1,152 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /* background-image:url("BG.png"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #65797a;
+    color: #333;
+  }
+
+  /* 顶部导航栏 */
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(11, 11, 11, 0.25);
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 20px 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  font-family: 'Bookman Old Style';
+}
+
+.navbar .nav-link {
+  color: #d6d6d6;
+  text-decoration: none;
+  margin-left: 50px;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.navbar .nav-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+/* .circle{
+    width: 30vw;
+    height: 30vw;
+    background-color: #ebce4c;
+    top: 50%;
+    transform: translate(50%,-50%);
+    right: 0;
+    position: absolute;
+    border-radius: 100%;
+} */
+.card_con {
+    width: 40vw;
+    height: 40vw;
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card_con > div {
+    width: 180%;
+    height: 80%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.card1 {
+    top: 50%;
+    transform-origin: 100% 50%;
+    transform: translateY(-50%) rotate(25deg) !important;
+    transition: all 1s;
+    /* opacity: 0.5; */
+}
+
+.card2 {
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg) !important;
+    z-index: 20;
+    transition: all 1s;
+}
+
+.card3 {
+    transform-origin: 100% 50%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-25deg) !important;
+    transition: all 1s;
+    /* opacity: 0.5; */
+}
+
+.cards1 {
+    transform-origin: 100% 50%;
+    top: 50%;
+    transform: translateY(-50%) rotate(60deg);
+    left: 0%;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.cards2 {
+    transform-origin: 100% 50%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-60deg);
+    left: 0%;
+    opacity: 0;
+    transition: all 0.3s;
+
+}
+
+.c1{
+    background: url("./image/ticket01-immersive\ theatre.png") no-repeat center;
+    background-size: cover;
+}
+.c2{
+    background: url("./image/ticket02.png") no-repeat center;
+    background-size: cover;
+}
+.c3{
+    background: url("./image/ticket03.png") no-repeat center;
+    background-size: cover;
+}
+.c4{
+    background: url("./image/ticket04-QuanZhangJian.png") no-repeat center;
+    background-size: cover;
+}
+.c5{
+    background: url("./image/ticket05-Arrival.png") no-repeat center;
+    background-size: cover;
+}
+/* .circle_text{
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 50%;
+    height: auto;
+    transform: translateY(-50%);
+} */
